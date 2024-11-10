@@ -1,3 +1,14 @@
+/* Import SCSS files first using @use (must be the first thing) */
+@use "./styles/header" as *;
+@use "./styles/footer" as *;
+@use "./App" as *;
+
+/* Import Tailwind directives after @use */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS Reset */
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -8,18 +19,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import "./styles/header.scss";
-@import "./styles/footer.scss";
-@import "./App.scss";
 
+/* Global body styling */
 body {
   margin: 0;
   padding: 0;
 }
 
+/* Button Styling */
 button {
   border: 0;
   padding: 0;

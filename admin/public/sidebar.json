@@ -1,0 +1,203 @@
+{
+  "Dashboard": {
+    "icon": "BiSolidDashboard",
+    "subMenu": [],
+    "component": "Dashboard"
+  },
+  "Products": {
+    "icon": "TbCalendarCheck",
+    "subMenu": [
+      {
+        "title": "Product List",
+        "component": "ProductList"
+      },
+      {
+        "title": "Add Product",
+        "component": "AddProduct"
+      },
+      {
+        "title": "Product Categories",
+        "component": "ProductCategories"
+      }
+    ],
+    "component": "Products"
+  },
+  "Categories": {
+    "icon": "BsPersonFillGear",
+    "subMenu": [
+      {
+        "title": "Category List",
+        "component": "CategoryList"
+      },
+      {
+        "title": "Add Category",
+        "component": "AddCategory"
+      }
+    ],
+    "component": "Categories"
+  },
+  "Brands": {
+    "icon": "BsFillGrid3X3GapFill",
+    "subMenu": [
+      {
+        "title": "Brand List",
+        "component": "BrandList"
+      },
+      {
+        "title": "Add Brand",
+        "component": "AddBrand"
+      }
+    ],
+    "component": "Brands"
+  },
+  "Orders": {
+    "icon": "MdOutlinePendingActions",
+    "subMenu": [
+      {
+        "title": "Order List",
+        "component": "OrderList"
+      },
+      {
+        "title": "Manage Orders",
+        "component": "ManageOrders"
+      }
+    ],
+    "component": "Orders"
+  },
+  "Customers": {
+    "icon": "BsFillPersonFill",
+    "subMenu": [
+      {
+        "title": "Customer List",
+        "component": "CustomerList"
+      },
+      {
+        "title": "Add Customer",
+        "component": "AddCustomer"
+      }
+    ],
+    "component": "Customers"
+  },
+  "Refunds": {
+    "icon": "FaFilterCircleDollar",
+    "subMenu": [
+      {
+        "title": "Refund Requests",
+        "component": "RefundRequests"
+      },
+      {
+        "title": "Process Refund",
+        "component": "ProcessRefund"
+      }
+    ],
+    "component": "Refunds"
+  },
+  "Sellers": {
+    "icon": "FaStore",
+    "subMenu": [
+      {
+        "title": "Seller List",
+        "component": "SellerList"
+      },
+      {
+        "title": "Add Seller",
+        "component": "AddSeller"
+      }
+    ],
+    "component": "Sellers"
+  },
+  "Earnings": {
+    "icon": "AiFillPieChart",
+    "subMenu": [
+      {
+        "title": "Earnings Overview",
+        "component": "EarningsOverview"
+      },
+      {
+        "title": "Earnings History",
+        "component": "EarningsHistory"
+      }
+    ],
+    "component": "Earnings"
+  },
+  "Refund Request": {
+    "icon": "FaFilterCircleDollar",
+    "subMenu": [],
+    "component": "RefundRequest"
+  },
+  "Reviews": {
+    "icon": "BsChatLeftTextFill",
+    "subMenu": [
+      {
+        "title": "Product Reviews",
+        "component": "ProductReviews"
+      },
+      {
+        "title": "Seller Reviews",
+        "component": "SellerReviews"
+      }
+    ],
+    "component": "Reviews"
+  },
+  "Shop Setting": {
+    "icon": "IoSettingsSharp",
+    "subMenu": [
+      {
+        "title": "Shop Information",
+        "component": "ShopInformation"
+      },
+      {
+        "title": "Payment Settings",
+        "component": "PaymentSettings"
+      }
+    ],
+    "component": "ShopSetting"
+  },
+  "Support Tickets": {
+    "icon": "TbMailExclamation",
+    "subMenu": [
+      {
+        "title": "Ticket List",
+        "component": "TicketList"
+      },
+      {
+        "title": "Create Ticket",
+        "component": "CreateTicket"
+      }
+    ],
+    "component": "SupportTickets"
+  },
+  "Account Settings": {
+    "icon": "GrUserSettings",
+    "subMenu": [
+      {
+        "title": "Profile Settings",
+        "component": "ProfileSettings"
+      },
+      {
+        "title": "Password Settings",
+        "component": "PasswordSettings"
+      }
+    ],
+    "component": "AccountSettings"
+  },
+  "Site Settings": {
+    "icon": "IoSettingsSharp",
+    "subMenu": [
+      {
+        "title": "General Settings",
+        "component": "GeneralSettings"
+      },
+      {
+        "title": "SEO Settings",
+        "component": "SEOSettings"
+      }
+    ],
+    "component": "SiteSettings"
+  },
+  "Logout": {
+    "icon": "IoPower",
+    "subMenu": [],
+    "component": "Logout"
+  }
+}

@@ -14,7 +14,7 @@ function App() {
     <div className="flex">
       <div
         className={clsx(
-          "hover:w-[15vw] transition-all group",
+          "hover:w-[15vw] transition-all group ease-in-out duration-300",
           isFixed ? "w-[15vw] " : "w-[5vw]"
         )}
       >
