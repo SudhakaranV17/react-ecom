@@ -1,0 +1,15 @@
+footer {
+  div {
+    svg {
+      width: 18px;
+      height: auto;
+    }
+  }
+  a {
+    opacity: 0.5;
+    transition: all 0.5s ease;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

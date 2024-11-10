@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "name": "Footwear",
+    "price": 1000,
+    "image": "https://swiperjs.com/demos/images/nature-2.jpg",
+    "description": "Comfortable and stylish footwear."
+  },
+  {
+    "id": 2,
+    "name": "Printed Canvas",
+    "price": 162.36,
+    "image": "https://swiperjs.com/demos/images/nature-1.jpg",
+    "description": "Beautiful printed canvas artwork."
+  },
+  {
+    "id": 3,
+    "name": "Stylish Bag",
+    "price": 750,
+    "image": "https://swiperjs.com/demos/images/nature-3.jpg",
+    "description": "A stylish bag for everyday use."
+  },
+  {
+    "id": 4,
+    "name": "Smartwatch",
+    "price": 2500,
+    "image": "https://swiperjs.com/demos/images/nature-4.jpg",
+    "description": "Feature-rich smartwatch with health tracking."
+  },
+  {
+    "id": 5,
+    "name": "Wireless Headphones",
+    "price": 1500,
+    "image": "https://swiperjs.com/demos/images/nature-5.jpg",
+    "description": "High-quality sound and noise cancellation."
+  },
+  {
+    "id": 6,
+    "name": "Backpack",
+    "price": 1200,
+    "image": "https://swiperjs.com/demos/images/nature-6.jpg",
+    "description": "Durable backpack for travel and daily use."
+  },
+  {
+    "id": 7,
+    "name": "Footwear",
+    "price": 1300,
+    "image": "https://swiperjs.com/demos/images/nature-2.jpg",
+    "description": "Comfortable and stylish footwear."
+  },
+  {
+    "id": 8,
+    "name": "Printed Canvas",
+    "price": 164.36,
+    "image": "https://swiperjs.com/demos/images/nature-1.jpg",
+    "description": "Beautiful printed canvas artwork."
+  },
+  {
+    "id": 9,
+    "name": "Stylish Bag",
+    "price": 700,
+    "image": "https://swiperjs.com/demos/images/nature-3.jpg",
+    "description": "A stylish bag for everyday use."
+  },
+  {
+    "id": 10,
+    "name": "Smartwatch",
+    "price": 2500,
+    "image": "https://swiperjs.com/demos/images/nature-4.jpg",
+    "description": "Feature-rich smartwatch with health tracking."
+  },
+  {
+    "id": 11,
+    "name": "Wireless Headphones",
+    "price": 1500,
+    "image": "https://swiperjs.com/demos/images/nature-5.jpg",
+    "description": "High-quality sound and noise cancellation."
+  },
+  {
+    "id": 12,
+    "name": "Backpack",
+    "price": 1200,
+    "image": "https://swiperjs.com/demos/images/nature-6.jpg",
+    "description": "Durable backpack for travel and daily use."
+  },
+  {
+    "id": 13,
+    "name": "Footwear",
+    "price": 1000,
+    "image": "https://swiperjs.com/demos/images/nature-2.jpg",
+    "description": "Comfortable and stylish footwear."
+  },
+  {
+    "id": 14,
+    "name": "Printed Canvas",
+    "price": 162.36,
+    "image": "https://swiperjs.com/demos/images/nature-1.jpg",
+    "description": "Beautiful printed canvas artwork."
+  },
+  {
+    "id": 15,
+    "name": "Stylish Bag",
+    "price": 750,
+    "image": "https://swiperjs.com/demos/images/nature-3.jpg",
+    "description": "A stylish bag for everyday use."
+  },
+  {
+    "id": 16,
+    "name": "Smartwatch",
+    "price": 2500,
+    "image": "https://swiperjs.com/demos/images/nature-4.jpg",
+    "description": "Feature-rich smartwatch with health tracking."
+  },
+  {
+    "id": 17,
+    "name": "Wireless Headphones",
+    "price": 1500,
+    "image": "https://swiperjs.com/demos/images/nature-5.jpg",
+    "description": "High-quality sound and noise cancellation."
+  },
+  {
+    "id": 18,
+    "name": "Backpack",
+    "price": 1200,
+    "image": "https://swiperjs.com/demos/images/nature-6.jpg",
+    "description": "Durable backpack for travel and daily use."
+  }
+]

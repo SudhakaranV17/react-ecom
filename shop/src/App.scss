@@ -1,0 +1,6 @@
+.swiper-slide {
+  opacity: 0 !important;
+  &-active {
+    opacity: 1 !important;
+  }
+}
