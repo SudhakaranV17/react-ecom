@@ -61,16 +61,21 @@ function Sidebar({ sidebarHandler, isFixed }) {
   }, []);
 
   return (
-    <div className="bg-black/60 p-6 text-white">
+    <div className=" p-6 text-white relative z-10">
       {/* header */}
       <div className="flex justify-between mb-8">
         <h3>ADMIN</h3>
-        <div className="w-6 h-6 invisible group-hover:!visible flex items-center justify-center hover:bg-slate-800 rounded-full transition-all ease-out duration-75">
+        <div
+          className={clsx(
+            isFixed ? "visible" : "invisible",
+            "w-6 h-6 group-hover:!visible flex items-center justify-center hover:bg-slate-800 rounded-full transition-all ease-out duration-75"
+          )}
+        >
           <IoChevronBack
             onClick={sidebarHandler}
             className={clsx(
               !isFixed ? "" : "rotate-180",
-              "transition-all ease-out"
+              "transition-all ease-out cursor-pointer"
             )}
           />
         </div>
@@ -86,17 +91,21 @@ function Sidebar({ sidebarHandler, isFixed }) {
               <AccordionItem value={key} key={key} className="">
                 <AccordionTrigger>
                   <div className="flex gap-2 items-end">
-                    {IconComponent && <IconComponent className="w-6 h-6" />}{" "}
+                    {IconComponent && (
+                      <IconComponent className="w-6 h-6 min-w-6 min-h-6" />
+                    )}{" "}
                     {/* Render the icon */}
-                    <span
-                      className={clsx(
-                        isFixed && "!visible",
-                        "invisible",
-                        "group-hover:!visible transition-all duration-75 ease-out"
-                      )}
-                    >
-                      {key}
-                    </span>
+                    <Link to={value.component}>
+                      <span
+                        className={clsx(
+                          isFixed && "!visible",
+                          "invisible",
+                          "group-hover:!visible lg:text-sm md-text-sm text-nowrap transition-all duration-75 ease-out "
+                        )}
+                      >
+                        {key}
+                      </span>
+                    </Link>
                   </div>
                 </AccordionTrigger>
 
@@ -107,7 +116,15 @@ function Sidebar({ sidebarHandler, isFixed }) {
                       {value.subMenu.map((subItem, index) => (
                         <li key={index}>
                           <Link to={subItem.component}>
-                            <span>{subItem.title}</span>
+                            <span
+                              className={clsx(
+                                isFixed && "!visible",
+                                "invisible",
+                                "group-hover:!visible lg:text-sm md-text-sm text-nowrap transition-all duration-75 ease-out "
+                              )}
+                            >
+                              {subItem.title}
+                            </span>
                           </Link>
                           {/* <div className="flex gap-2 items-center">
                           </div> */}

@@ -7,7 +7,7 @@ import User from "./User/User";
 
 function Header() {
   return (
-    <div className="flex justify-between py-8 px-16">
+    <div className="flex justify-between py-8 px-16  relative z-0">
       <div className="">
         <Link
           to={"/"}
