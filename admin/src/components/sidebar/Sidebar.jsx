@@ -95,7 +95,19 @@ function Sidebar({ sidebarHandler, isFixed }) {
                       <IconComponent className="w-6 h-6 min-w-6 min-h-6" />
                     )}{" "}
                     {/* Render the icon */}
-                    <Link to={value.component}>
+                    {value.component ? (
+                      <Link to={value.component}>
+                        <span
+                          className={clsx(
+                            isFixed && "!visible",
+                            "invisible",
+                            "group-hover:!visible lg:text-sm md-text-sm text-nowrap transition-all duration-75 ease-out "
+                          )}
+                        >
+                          {key}
+                        </span>
+                      </Link>
+                    ) : (
                       <span
                         className={clsx(
                           isFixed && "!visible",
@@ -105,16 +117,20 @@ function Sidebar({ sidebarHandler, isFixed }) {
                       >
                         {key}
                       </span>
-                    </Link>
+                    )}
                   </div>
                 </AccordionTrigger>
 
                 {/* Render submenu if it exists */}
                 {value.subMenu && value.subMenu.length > 0 && (
                   <AccordionContent>
-                    <ul className="ml-4 flex flex-col gap-2">
+                    <ul className="ml-4 flex flex-col gap-2 pl-5">
                       {value.subMenu.map((subItem, index) => (
-                        <li key={index}>
+                        <li
+                          key={index}
+                          className="list-disc 
+                        "
+                        >
                           <Link to={subItem.component}>
                             <span
                               className={clsx(
