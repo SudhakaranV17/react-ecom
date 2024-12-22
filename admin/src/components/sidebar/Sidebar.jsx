@@ -73,7 +73,7 @@ function Sidebar({ sidebarHandler, isFixed }) {
   };
   return (
     <div
-      className=" p-6 text-white relative z-10"
+      className=" p-6 text-white relative z-10 overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={() => {

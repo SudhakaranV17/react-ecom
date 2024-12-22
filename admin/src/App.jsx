@@ -36,7 +36,7 @@ function App() {
           <Sidebar sidebarHandler={sidebarHandler} isFixed={isFixed} />
         </div>
 
-        <div className="flex-grow pt-[110px] pl-16">
+        <div className="flex-grow pt-[110px] p-16">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/dashboard" element={<Dashboard />} />
