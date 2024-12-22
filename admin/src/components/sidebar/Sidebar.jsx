@@ -16,7 +16,7 @@ import {
 } from "react-icons/bs";
 import { MdOutlinePendingActions } from "react-icons/md";
 import { FaStore } from "react-icons/fa";
-import { FaFilterCircleDollar } from "react-icons/fa6";
+import { FaFilterCircleDollar, FaChevronRight } from "react-icons/fa6";
 import { AiFillPieChart } from "react-icons/ai";
 import { IoSettingsSharp, IoPower } from "react-icons/io5";
 import { GrUserSettings } from "react-icons/gr";
@@ -43,7 +43,8 @@ const iconMap = {
 
 function Sidebar({ sidebarHandler, isFixed }) {
   const [productsList, setProductsList] = useState(null);
-
+  const [accordionValue, setAccordionValue] = useState([]);
+  const [isHovered, setIsHovered] = useState(false);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -59,9 +60,28 @@ function Sidebar({ sidebarHandler, isFixed }) {
     };
     fetchData();
   }, []);
-
+  useEffect(() => {
+    if (!isHovered && !isFixed) {
+      // Close all accordions when leaving the sidebar and isFixed is false
+      setAccordionValue([]);
+    }
+  }, [isHovered, isFixed]);
+  const handleToggleAccordion = (key) => {
+    setAccordionValue(
+      (prevValue) => (prevValue.includes(key) ? [] : [key]) // Toggle between open and closed states
+    );
+  };
   return (
-    <div className=" p-6 text-white relative z-10">
+    <div
+      className=" p-6 text-white relative z-10"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      onClick={() => {
+        if (!isHovered && !isFixed) {
+          setAccordionValue([]);
+        }
+      }}
+    >
       {/* header */}
       <div className="flex justify-between mb-8">
         <h3>ADMIN</h3>
@@ -82,15 +102,21 @@ function Sidebar({ sidebarHandler, isFixed }) {
       </div>
 
       {/* admin list */}
-      <Accordion type="multiple" collapsible className="w-full">
+      <Accordion
+        type="multiple"
+        collapsible
+        className="w-full"
+        value={accordionValue}
+        onValueChange={setAccordionValue} // Update state on accordion toggle
+      >
         {productsList &&
           Object.entries(productsList)?.map(([key, value]) => {
             const IconComponent = iconMap[value.icon]; // Dynamically map the icon to the React component
 
             return (
               <AccordionItem value={key} key={key} className="">
-                <AccordionTrigger>
-                  <div className="flex gap-2 items-end">
+                <AccordionTrigger onClick={() => handleToggleAccordion(key)}>
+                  <div className="flex gap-2 items-end w-full">
                     {IconComponent && (
                       <IconComponent className="w-6 h-6 min-w-6 min-h-6" />
                     )}{" "}
@@ -112,10 +138,16 @@ function Sidebar({ sidebarHandler, isFixed }) {
                         className={clsx(
                           isFixed && "!visible",
                           "invisible",
-                          "group-hover:!visible lg:text-sm md-text-sm text-nowrap transition-all duration-75 ease-out "
+                          "group-hover:!visible w-full flex justify-between items-center lg:text-sm md-text-sm text-nowrap transition-all duration-75 ease-out "
                         )}
                       >
                         {key}
+                        <span className="w-6 h-6 flex justify-center items-center">
+                          <FaChevronRight
+                            className="AccordionChevron"
+                            aria-hidden
+                          />
+                        </span>
                       </span>
                     )}
                   </div>
@@ -123,7 +155,7 @@ function Sidebar({ sidebarHandler, isFixed }) {
 
                 {/* Render submenu if it exists */}
                 {value.subMenu && value.subMenu.length > 0 && (
-                  <AccordionContent>
+                  <AccordionContent className={""}>
                     <ul className="ml-4 flex flex-col gap-2 pl-5">
                       {value.subMenu.map((subItem, index) => (
                         <li

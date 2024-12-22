@@ -55,20 +55,27 @@ function SingleProduct() {
     const currentQuantity = quantity[id] || 1;
     const existingItem = items.find((item) => item.id === productId);
 
-    if (existingItem && existingItem.quantity === quantity) {
+    if (existingItem && existingItem.quantity === currentQuantity) {
       console.log(`Quantity for ${productId} is unchanged. No update needed.`);
+      toast({
+        title: `Quantity for ${productId} is unchanged. No update needed.`,
+        variant: "destructive",
+        description: "Friday, February 10, 2023 at 5:57 PM",
+        action: <ToastAction altText="View Cart">View Cart</ToastAction>,
+      });
       return;
+    } else {
+      dispatch(addToCart({ id: productId, quantity: Number(currentQuantity) }));
+      toast({
+        title: "Product Added To Cart",
+        description: "Friday, February 10, 2023 at 5:57 PM",
+        action: (
+          <Link to={"/cart"} className="w-fit text-nowrap">
+            <ToastAction altText="View Cart">View Cart</ToastAction>
+          </Link>
+        ),
+      });
     }
-    dispatch(addToCart({ id: productId, quantity: Number(currentQuantity) }));
-    toast({
-      title: "Product Added To Cart",
-      description: "Friday, February 10, 2023 at 5:57 PM",
-      action: (
-        <Link to={"/cart"} className="w-fit text-nowrap">
-          <ToastAction altText="View Cart">View Cart</ToastAction>
-        </Link>
-      ),
-    });
   };
 
   return (
