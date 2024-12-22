@@ -1,0 +1,34 @@
+{
+  "order": {
+    "cardName": "Order",
+    "cardTotalPrice": 32350,
+    "cardTotalCount": "4555",
+    "cardPercent": 10.99,
+    "cardStatus": "up",
+    "cardType": "num"
+  },
+  "soldItems": {
+    "cardName": "Sold Items",
+    "cardTotalPrice": "2360",
+    "cardTotalCount": "4555",
+    "cardPercent": 10.99,
+    "cardStatus": "down",
+    "cardType": "num"
+  },
+  "grossSale": {
+    "cardName": "Gross Sale",
+    "cardTotalPrice": "12460",
+    "cardTotalCount": "4555",
+    "cardPercent": 10.99,
+    "cardStatus": "down",
+    "cardType": "amount"
+  },
+  "Shipping": {
+    "cardName": "Total Shipping Cost",
+    "cardTotalPrice": "6240",
+    "cardTotalCount": "4555",
+    "cardPercent": 10.99,
+    "cardStatus": "up",
+    "cardType": "amount"
+  }
+}
