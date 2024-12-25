@@ -1,5 +1,5 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import clsx from "clsx";
 import {
   Accordion,
@@ -7,7 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import Login from "./Login";
+import Login from "../auth/Login";
 import Newsletter from "./Newsletter";
 import Transactions from "./Transactions";
 import MyAccount from "./MyAccount";
@@ -18,7 +18,7 @@ import RecurringPayments from "./RecurringPayments";
 import OrderHistory from "./OrderHistory";
 import RewardPoints from "./RewardPoints";
 import AccountReturns from "./AccountReturns";
-import Register from "./Register";
+import Register from "../auth/Register";
 import AboutUs from "../information/AboutUs";
 import DeliveryInfo from "../information/DeliveryInfo";
 import PrivacyPolicy from "../information/PrivacyPolicy";

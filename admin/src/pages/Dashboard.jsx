@@ -19,6 +19,8 @@ function Dashboard() {
       }
     };
     getCardDetails();
+
+
   }, []);
   return (
     <>
@@ -28,7 +30,7 @@ function Dashboard() {
         </div>
         <div className=" flex gap-4 md:w-1/2 flex-wrap">
           {CardData &&
-            Object.entries(CardData).map(([key, value], index) => {
+            Object.entries(CardData).map(([_, value], index) => {
               return <CardDetails key={index} data={value} />;
             })}
         </div>

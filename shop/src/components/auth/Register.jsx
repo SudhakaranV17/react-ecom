@@ -1,19 +1,12 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
-import React from "react";
 import { Link } from "react-router-dom";
 import "./account.scss";
 function Register() {
   return (
     <>
       <div className="w-full">
-        <p className="w-full text-sm text-black/40 mb-4">
-          If you already have an account with us, please login at the{" "}
-          <Link to={"/account"} className="text-black/80 underline">
-            login page.
-          </Link>
-        </p>
         <form id="register_form" className="flex flex-col gap-6">
           <div className="info">
             <h2 className="text-xl font-normal mb-2">Your Personal Details</h2>

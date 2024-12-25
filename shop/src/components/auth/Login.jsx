@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
+import GoogleAuth from "./GoogleAuth";
 
 function Login() {
   return (
-    <div className="w-[50%] mx-auto mt-8">
+    <div className="w-full mx-auto mt-8">
       <form id="login_form" className="flex flex-col gap-12">
         <div className="">
           <label htmlFor="email">Email</label>
@@ -36,6 +37,10 @@ function Login() {
       >
         Lost your password?
       </Link>
+      <div className="my-6 font-normal">OR</div>
+      <div>
+        <GoogleAuth />
+      </div>
     </div>
   );
 }
