@@ -24,9 +24,20 @@ import DeliveryInfo from "../information/DeliveryInfo";
 import PrivacyPolicy from "../information/PrivacyPolicy";
 import TermsAndconditions from "../information/TermsAndconditions";
 import ContactUs from "../ContactUs/ContactUs";
+import LogoutButton from "../auth/logout";
+import { useDispatch, useSelector } from "react-redux";
+import { checkLoginStatus } from "@/src/slice/authenticationSlice";
 
 function Account() {
-  const isUser = false;
+  const dispatch = useDispatch();
+  const { user, loading, error } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    dispatch(checkLoginStatus());
+  }, [dispatch]);
+
+  const isUser = user?._id || false;
+
   const tabs = [
     { value: "my-account", label: "My Account", comp: <MyAccount /> },
     { value: "address-book", label: "Address Book", comp: <AddressBook /> },
@@ -64,13 +75,13 @@ function Account() {
     { value: "contact-us", label: "Contact Us", comp: <ContactUs /> },
   ];
 
-  if (isUser) {
+  if (!isUser) {
     tabs.unshift(
       { value: "login", label: "Login", comp: <Login /> },
       { value: "register", label: "Register", comp: <Register /> }
     );
   } else {
-    tabs.push({ value: "logout", label: "Logout", comp: null });
+    tabs.push({ value: "logout", label: "Logout", comp: <LogoutButton /> });
   }
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]?.value || "");

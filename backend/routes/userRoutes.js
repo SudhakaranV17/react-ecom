@@ -1,8 +1,31 @@
 import express from "express";
-import { signup } from "../controllers/userController.js"; // Adjust the path if necessary
-
+import authenticate from "../middlewares/protectRoutes.js";
+import User from "../models/userModel.js";
+import jwt from "jsonwebtoken"
 const router = express.Router();
 
-router.post("/add", signup);
+router.get("/dashboard", authenticate, (req, res) => {
+    res.json({ message: `Welcome, ${req.user.email}!`, user: req.user });
+});
+
+router.get("/profile", authenticate, async (req, res) => {
+    const token = req.cookies.auth_token;
+
+    if (!token) {
+        return res.status(401).send({ message: "Not logged in" });
+    }
+
+    try {
+        const decoded = jwt.verify(token, process.env.JWT_SECRET);
+        const user = await User.findById(decoded.id);
+        if (!user) {
+            return res.status(401).send({ message: "User not found" });
+        }
+        return res.status(200).send({ user });
+    } catch (error) {
+        console.error("Error verifying token:", error);
+        res.status(500).send("Authentication error");
+    }
+});
 
 export default router;

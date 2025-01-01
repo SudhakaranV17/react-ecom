@@ -26,9 +26,17 @@ import { IoSearch } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import styles from "./header.module.css";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import clsx from "clsx";
+import { useEffect } from "react";
+import { checkLoginStatus } from "@/src/slice/authenticationSlice";
 function Header() {
+  const dispatch = useDispatch();
+  const { user, loading, error } = useSelector((state) => state.auth);
+  useEffect(() => {
+    dispatch(checkLoginStatus());
+  }, [dispatch]);
+
   const { totalItems } = useSelector((state) => state.cart);
   const StyledLink = styled.span`
     text-decoration: none;
@@ -133,7 +141,9 @@ function Header() {
                   <DropdownMenuItem>Profile</DropdownMenuItem>
                   <DropdownMenuItem>Wishlist</DropdownMenuItem>
                   <DropdownMenuItem>Settings</DropdownMenuItem>
-                  <DropdownMenuItem>Logout</DropdownMenuItem>
+                  <Link to={"/logout"}>
+                    <DropdownMenuLabel>Login</DropdownMenuLabel>
+                  </Link>
                 </>
               )}
             </DropdownMenuContent>
