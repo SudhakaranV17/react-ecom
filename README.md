@@ -78,8 +78,7 @@ Contributions are welcome! Here's how you can help:
 1. Fork the repository:
 
    ```bash
-   git clone https://github.com/your-username/ecommerce-project.git```
-
+   git clone https://github.com/your-username/ecommerce-project.git
 
 ---
 
