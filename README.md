@@ -37,14 +37,6 @@ A modern e-commerce application featuring Google OAuth for user authentication, 
 - MongoDB instance running
 - Google Cloud Console project (for OAuth setup)
 
-### Clone the Repository:
-```bash
-git clone https://github.com/SudhakaranV17/ecommerce-project.git
-cd ecommerce-project
-'''
-
----
-
 ## 🧪 API Endpoints
 
 ### Authentication:
