@@ -39,5 +39,5 @@ A modern e-commerce application featuring Google OAuth for user authentication, 
 
 ### Clone the Repository:
 ```bash
-git clone https://github.com/your-username/ecommerce-project.git
+git clone https://github.com/SudhakaranV17/ecommerce-project.git
 cd ecommerce-project
