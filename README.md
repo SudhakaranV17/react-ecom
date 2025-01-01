@@ -78,4 +78,19 @@ Contributions are welcome! Here's how you can help:
 1. Fork the repository:
 
    ```bash
-   git clone https://github.com/your-username/ecommerce-project.git
+   git clone https://github.com/your-username/ecommerce-project.git```
+
+
+---
+
+## 📞 Support
+
+For questions or issues, feel free to contact:
+
+- **Email**: sudhakaranv17@gmail.com
+- **GitHub Issues**: [Issue Tracker](https://github.com/SudhakaranV17/ecommerce-project/issues)
+
+
+---
+
+Enjoy coding! 🚀
