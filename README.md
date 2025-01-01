@@ -41,3 +41,47 @@ A modern e-commerce application featuring Google OAuth for user authentication, 
 ```bash
 git clone https://github.com/SudhakaranV17/ecommerce-project.git
 cd ecommerce-project
+
+
+## 🧪 API Endpoints
+
+### Authentication:
+
+- **POST** `/auth/login`: Google OAuth login.
+- **POST** `/auth/logout`: Logout and clear user session.
+- **GET** `/auth/profile`: Fetch the logged-in user's profile.
+
+### Products:
+
+- **GET** `/products`: List all products.
+- **GET** `/products/:id`: Get product details.
+- **POST** `/products`: Add a product (Admin only).
+- **PUT** `/products/:id`: Update product details (Admin only).
+- **DELETE** `/products/:id`: Delete a product (Admin only).
+
+---
+
+## 🌟 Future Enhancements
+
+- **Cart Functionality**: Add to cart and checkout workflows.
+- **Admin Dashboard**: Manage products and orders.
+- **Payment Integration**: Implement Stripe or PayPal.
+
+---
+
+## 🛡️ Security
+
+- Use HTTP-only cookies for storing JWT.
+- Validate all inputs and handle errors securely.
+- Protect routes using authentication middleware.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Here's how you can help:
+
+1. Fork the repository:
+
+   ```bash
+   git clone https://github.com/your-username/ecommerce-project.git
