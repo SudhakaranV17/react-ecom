@@ -43,6 +43,8 @@ git clone https://github.com/SudhakaranV17/ecommerce-project.git
 cd ecommerce-project
 '''
 
+---
+
 ## 🧪 API Endpoints
 
 ### Authentication:
