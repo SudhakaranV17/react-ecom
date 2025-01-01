@@ -41,10 +41,3 @@ A modern e-commerce application featuring Google OAuth for user authentication, 
 ```bash
 git clone https://github.com/SudhakaranV17/ecommerce-project.git
 cd ecommerce-project
-'''
-
-
-### Backend Setup:
-1. Navigate to the backend folder:
-   ```bash
-   cd backend
