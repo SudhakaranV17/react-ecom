@@ -5,8 +5,13 @@ import axios from "axios";
 export const checkLoginStatus = createAsyncThunk("auth/checkLoginStatus", async (_, thunkAPI) => {
     try {
         const { data } = await axios.get("http://localhost:7000/shop/profile", { withCredentials: true });
+        if (!data) {
+            throw new Error("User Not found");
 
-        return data.user; // User data from backend
+        }
+        const user = data?.userData
+
+        return user; // User data from backend
     } catch (error) {
         return thunkAPI.rejectWithValue("Not logged in:", error.message);
     }

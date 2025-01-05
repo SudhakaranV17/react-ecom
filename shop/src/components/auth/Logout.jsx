@@ -1,16 +1,23 @@
 import { useDispatch } from "react-redux";
 import { logout } from "@/src/slice/authenticationSlice";
-import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import { useNavigate } from "react-router-dom";
 
-const LogoutButton = () => {
+const LogoutButton = ({ showButton = false }) => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
 
   const handleLogout = () => {
-    dispatch(logout()); // Dispatch logout action
-    navigate("/myaccount"); // Redirect to /myaccount after logout
+    dispatch(logout());
+    navigate("/myaccount");
   };
 
+  // If showButton is false, just dispatch the logout action and return null
+  if (!showButton) {
+    dispatch(logout());
+    return null;
+  }
+
+  // Otherwise, render the Logout button
   return <button onClick={handleLogout}>Logout</button>;
 };
 

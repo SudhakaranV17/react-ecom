@@ -10,6 +10,7 @@ import Account from "./components/account/Account";
 import Footer from "./components/footer/Footer";
 import { Toaster } from "@/components/ui/toaster";
 import Login from "./components/auth/Login";
+import LogoutButton from "./components/auth/Logout";
 function App() {
   // const clientId = process.env.REACT_APP_GSECRET_CLIENT_ID;
   return (
@@ -19,7 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/logout" element={<Login />} />
+        <Route path="/logout" element={<LogoutButton />} />
         <Route path="/account" element={<Account />} />
         <Route path="/account/:id" element={<Account />} />
         <Route path="/shop" element={<Shop />} />

@@ -130,11 +130,7 @@ function Header() {
               align="end"
               className={styles.DropdownMenuContent}
             >
-              {true ? (
-                <Link to={"/account"}>
-                  <DropdownMenuLabel>Login</DropdownMenuLabel>
-                </Link>
-              ) : (
+              {user ? (
                 <>
                   <DropdownMenuLabel>My Account</DropdownMenuLabel>
                   <DropdownMenuSeparator />
@@ -142,9 +138,13 @@ function Header() {
                   <DropdownMenuItem>Wishlist</DropdownMenuItem>
                   <DropdownMenuItem>Settings</DropdownMenuItem>
                   <Link to={"/logout"}>
-                    <DropdownMenuLabel>Login</DropdownMenuLabel>
+                    <DropdownMenuLabel>Logout</DropdownMenuLabel>
                   </Link>
                 </>
+              ) : (
+                <Link to={"/account"}>
+                  <DropdownMenuLabel>Login</DropdownMenuLabel>
+                </Link>
               )}
             </DropdownMenuContent>
           </DropdownMenu>

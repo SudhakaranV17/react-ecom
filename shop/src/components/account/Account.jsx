@@ -36,7 +36,7 @@ function Account() {
     dispatch(checkLoginStatus());
   }, [dispatch]);
 
-  const isUser = user?._id || false;
+  const isUser = user || false;
 
   const tabs = [
     { value: "my-account", label: "My Account", comp: <MyAccount /> },
@@ -81,7 +81,11 @@ function Account() {
       { value: "register", label: "Register", comp: <Register /> }
     );
   } else {
-    tabs.push({ value: "logout", label: "Logout", comp: <LogoutButton /> });
+    tabs.push({
+      value: "logout",
+      label: "Logout",
+      comp: <LogoutButton showButton={false} />,
+    });
   }
 
   const [selectedTab, setSelectedTab] = useState(tabs[0]?.value || "");

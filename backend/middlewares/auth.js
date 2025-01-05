@@ -39,10 +39,12 @@ router.post("/login", async (req, res) => {
             });
             await user.save();
         }
-
+        const userData = {
+            username: user?.username, email: user?.email, profilepic: user?.profilePicture, isGoogle: user?.isGoogleAuth
+        }
         // Generate JWT token and set it as a secure cookie
         generateToken(user, res);
-        res.status(200).send({ message: "Login successful", user });
+        res.status(200).send({ message: "Login successful", userData });
     } catch (err) {
         console.error("Authentication Error Server:", err);
         res.status(500).send("Authentication failed");

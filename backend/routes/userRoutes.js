@@ -21,7 +21,10 @@ router.get("/profile", authenticate, async (req, res) => {
         if (!user) {
             return res.status(401).send({ message: "User not found" });
         }
-        return res.status(200).send({ user });
+        const userData = {
+            username: user?.username, email: user?.email, profilepic: user?.profilePicture, isGoogle: user?.isGoogleAuth
+        }
+        return res.status(200).send({ userData });
     } catch (error) {
         console.error("Error verifying token:", error);
         res.status(500).send("Authentication error");

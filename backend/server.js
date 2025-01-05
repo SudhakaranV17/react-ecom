@@ -7,6 +7,7 @@ import auth from "./middlewares/auth.js"
 import conncetDb from "./db/connectdb.js";
 import cors from "cors"
 import userRoutes from "./routes/userRoutes.js"
+import orderRoutes from "./routes/orderRoute/orderRoutes.js"
 // app
 const app = express();
 
@@ -26,6 +27,7 @@ app.use(cookieParser());
 // routes
 app.use("/auth", auth);
 app.use("/shop", userRoutes)
+app.use("/orders", orderRoutes)
 // test route
 app.use("/", (req, res) => {
   res.send("hello 2");
