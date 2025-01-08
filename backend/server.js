@@ -8,6 +8,7 @@ import conncetDb from "./db/connectdb.js";
 import cors from "cors"
 import userRoutes from "./routes/userRoutes.js"
 import orderRoutes from "./routes/orderRoute/orderRoutes.js"
+import inventoryRoutes from "./routes/inventory/inventoryRoutes.js"
 // app
 const app = express();
 
@@ -28,6 +29,7 @@ app.use(cookieParser());
 app.use("/auth", auth);
 app.use("/shop", userRoutes)
 app.use("/orders", orderRoutes)
+app.use("/inventory", inventoryRoutes)
 // test route
 app.use("/", (req, res) => {
   res.send("hello 2");
@@ -35,5 +37,5 @@ app.use("/", (req, res) => {
 // server
 app.listen(process.env.PORT || 7000, () => {
   conncetDb();
-  console.log("server connected", process.env.PORT);
+  console.log("server connected", process.env.PORT || 7000);
 });
